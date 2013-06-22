@@ -1,0 +1,49 @@
+// ~/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
+
+{
+  "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+  "theme": "Soda Light.sublime-theme",
+  "font_face": "Menlo",
+  "font_options": ["no_round"],
+  "font_size": 13,
+  "draw_white_space": "all",
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ensure_newline_at_eof_on_save": true,
+  "trim_trailing_white_space_on_save": true,
+  "translate_tabs_to_spaces": true,
+  "tab_size": 2,
+  "rulers": [80, 120],
+  "word_wrap": false,
+  "ignored_packages": [],
+  "folder_exclude_patterns": [
+    ".svn",
+    ".git",
+    ".hg",
+    "CVS",
+    ".sass-cache"
+  ],
+  "file_exclude_patterns": [
+    "*.pyc",
+    "*.pyo",
+    "*.exe",
+    "*.dll",
+    "*.obj",
+    "*.o",
+    "*.a",
+    "*.lib",
+    "*.so",
+    "*.dylib",
+    "*.ncb",
+    "*.sdf",
+    "*.suo",
+    "*.pdb",
+    "*.idb",
+    "*.class",
+    "*.psd",
+    "*.db",
+    "*.beam",
+    ".DS_Store",
+    ".tags"
+  ]
+}
