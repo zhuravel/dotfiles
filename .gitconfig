@@ -1,12 +1,20 @@
+### Visitors!
+### Please borrow freely from this config, but make sure to change
+### the [user] section to your info
+
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
 [user]
 	name = Bohdan Zhuravel
 	email = zhuravel.b@gmail.com
+
 [branch]
 	autosetuprebase = always
+
 [mergetool]
 	keepBackup = true
+
 [core]
 	editor = nano
 	excludesfile = /Users/bohdan/.gitignore_global
