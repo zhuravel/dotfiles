@@ -21,6 +21,17 @@ alias mysql-dir='cd /usr/local/var/mysql/'
 alias psql='psql -U bohdan postgres'
 alias redis-status='redis-cli ping'
 for dbname in mysql postgresql couchdb redis; do
-  eval "function ${dbname}-start() { launchctl load ~/Library/LaunchAgents/homebrew.mxcl.${dbname}.plist }"
-  eval "function ${dbname}-stop() { launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.${dbname}.plist }"
+  eval "${dbname}-start() { launchctl load ~/Library/LaunchAgents/homebrew.mxcl.${dbname}.plist }"
+  eval "${dbname}-stop() { launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.${dbname}.plist }"
 done
+
+# who is listening on a given TCP port?
+# $ onport 5984
+# $ onport 5984 --pid
+onport() {
+  if [ $# -eq 2 ]; then
+    lsof -i TCP:$1 -t
+  else
+    lsof -i TCP:$1 | grep LISTEN
+  fi
+}
