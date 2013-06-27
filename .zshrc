@@ -57,3 +57,10 @@ alias mysql-dir='cd /usr/local/var/mysql/'
 alias psql='psql -U bohdan postgres'
 alias psql-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias psql-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+
+alias couchdb-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.couchdb.plist'
+alias couchdb-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.couchdb.plist'
+
+alias redis-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
+alias redis-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
+alias redis-status='redis-cli ping'
