@@ -40,6 +40,7 @@
 *.log
 *.sql
 *.sqlite
+erl_crash.dump
 
 # OS generated files #
 ######################

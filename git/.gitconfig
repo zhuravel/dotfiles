@@ -16,5 +16,5 @@
 	keepBackup = true
 
 [core]
-	editor = nano
+	editor = subl -w
 	excludesfile = /Users/bohdan/.gitignore_global

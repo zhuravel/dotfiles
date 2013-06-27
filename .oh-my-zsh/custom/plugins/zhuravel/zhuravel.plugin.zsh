@@ -12,6 +12,9 @@ unsetopt correct_all
 # command line history
 bindkey '^R' history-incremental-search-backward
 
+# add plugin's bin directory to path
+export PATH="$(dirname $0)/bin:$PATH"
+
 # a few aliases I like
 alias ptt='rake parallel:test'
 alias pts='rake parallel:spec'
@@ -33,5 +36,14 @@ onport() {
     lsof -i TCP:$1 -t
   else
     lsof -i TCP:$1 | grep LISTEN
+  fi
+}
+
+# helps me figure out what I can delete to free some space on SSD
+find_large_files() {
+  if [ ! -z $1 ]; then
+    sudo find $1 -type f -size +${2:-100M} -exec du -h {} \; 2> /dev/null
+  else
+    echo "Usage: find_large_files /path 100M"
   fi
 }
