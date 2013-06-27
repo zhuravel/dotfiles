@@ -9,6 +9,7 @@
 *.o
 *.so
 *.beam
+*.pyc
 
 # Packages #
 ############
