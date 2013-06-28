@@ -1,6 +1,6 @@
 # Open a man page in Preview
 function pman() {
-  man -t $1 | open -f -a /Applications/Preview.app
+  man -t $1 | open -f -a preview
 }
 
 # Create a new directory and enter it
@@ -20,20 +20,52 @@ function fs() {
   else
     local arg=-sh
   fi
-  if [[ -n "$@" ]]; then
-    du $arg -- "$@"
-  else
-    du $arg .[^.]* *
-  fi
+  [[ -n "$@" ]] && du $arg -- "$@" || du $arg .[^.]* *;
+}
+
+# Convert unixtime to human-readable
+function humantime() {
+  perl -le 'print scalar gmtime shift' $1
+}
+
+# Calculator for floating point and powers
+# ? '((2+1)/7)^3.5' => 0.0515325
+function ? {
+  awk "BEGIN{ print $* }";
+}
+
+# Query Wikipedia via console over DNS
+function wiki() {
+  dig +short txt "$*".wp.dg.cx;
+}
+
+# Expand shortened URL
+function longurl() {
+  curl -sI $1 | sed -n 's/Location: *//p';
 }
 
 # Create a git.io short URL
 function gitio() {
-  if [ -z "${1}" -o -z "${2}" ]; then
-    echo "Usage: \`gitio slug url\`"
+  if [ $# -eq 2 ]; then
+    curl -i http://git.io/ -F "url=${1}" -F "code=${2}"
+  elif [ ! -z $1 ]; then
+    curl -i http://git.io/ -F "url=${1}"
+  else
+    echo 'Usage: gitio http://github.com/link [custom-name]'
     return 1
   fi
-  curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
+}
+
+# Create an l.md short URL
+function lmd() {
+  if [ $# -eq 2 ]; then
+    curl http://l.md/api/post -F "url=${1}" -F "custom=${2}" | json
+  elif [ ! -z $1 ]; then
+    curl http://l.md/api/post -F "url=${1}" | json
+  else
+    echo 'Usage: lmd http://example.com/link [custom-name]'
+    return 1
+  fi
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
@@ -45,14 +77,16 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# Syntax-highlight JSON strings or files
+# Start a simple SMTP server
+function smtp-server() {
+  local port="${1:-1025}"
+  python -m smtpd -n -c DebuggingServer localhost:${port}
+}
+
+# Format JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
-  if [ -t 0 ]; then # argument
-    python -mjson.tool <<< "$*" | pygmentize -l javascript
-  else # pipe
-    python -mjson.tool | pygmentize -l javascript
-  fi
+  [[ -t 0 ]] && python -mjson.tool <<< "$*" || python -mjson.tool
 }
 
 # All the dig info
@@ -68,6 +102,7 @@ function onport() {
     lsof -i TCP:$1 | grep LISTEN
   else
     echo 'Usage: onport $PORT [--pid]'
+    return 1
   fi
 }
 
@@ -77,6 +112,7 @@ function find_large_files() {
     sudo find $1 -type f -size +${2:-100M} -exec du -h {} \; 2> /dev/null
   else
     echo 'Usage: find_large_files /path 100M'
+    return 1
   fi
 }
 

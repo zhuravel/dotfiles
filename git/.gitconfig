@@ -3,18 +3,54 @@
 ### the [user] section to your info
 
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+  filelog = log -u
+  fl = log -u
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+  dr = "!f() { git diff "$1"^.."$1"; }; f"
+  lc = "!f() { git ll "$1"^.."$1"; }; f"
+  diffr = "!f() { git diff "$1"^.."$1"; }; f"
+  f = "!git ls-files | grep -i"
+  grep = grep -Ii
+  gr = grep -Ii
+  la = "!git config -l | grep alias | cut -c 7-"
+  wtf = blame
+  news = log -p HEAD@{1}..HEAD@{0}
+  cp = cherry-pick
+  st = status -s
+  cl = clone
+  ci = commit
+  co = checkout
+  br = branch
+  diff = diff --word-diff
+  dc = diff --cached
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  sl = stash list
+  sa = stash apply
+  ss = stash save
 
 [user]
-	name = Bohdan Zhuravel
-	email = zhuravel.b@gmail.com
+  name = Bohdan Zhuravel
+  email = zhuravel.b@gmail.com
 
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 
 [mergetool]
-	keepBackup = true
+  keepBackup = true
 
 [core]
-	editor = subl -w
-	excludesfile = /Users/bohdan/.gitignore_global
+  editor = subl -w
+  excludesfile = /Users/bohdan/.gitignore_global

@@ -16,7 +16,7 @@ bindkey '^R' history-incremental-search-backward
 export PATH="$(dirname $0)/bin:$PATH"
 
 # Load the shell dotfiles
-for file in "$(dirname $0)"/.{exports,aliases,functions}; do
+for file in "$(dirname $0)"/{exports,aliases,functions}.zsh; do
   [ -r "$file" ] && source "$file"
 done
 unset file

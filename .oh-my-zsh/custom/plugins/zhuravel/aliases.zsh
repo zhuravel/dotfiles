@@ -9,20 +9,30 @@ alias s='subl .'
 alias o='open'
 alias oo='open .'
 
+# A very simple and useful stopwatch (return or ctrl-d to stop)
+alias stopwatch='time ( read )'
+# Put a console clock in top right corner
+alias clock='while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &'
+# Simple calculator ( calc 2*2 => 4 )
+alias calc='bc <<<'
+# Easily search running processes
+alias 'ps?'='ps ax | grep '
+
 # Databases
 alias mysql='mysql -u root'
+alias mysql-top='watch -n 1 mysqladmin --user=root processlist'
 alias mysql-dir='cd /usr/local/var/mysql/'
 alias psql='psql -U bohdan postgres'
 alias redis-status='redis-cli ping'
 for dbname in mysql postgresql couchdb redis; do
   eval "$dbname-stop() { launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.$dbname.plist }
         $dbname-start() { launchctl load ~/Library/LaunchAgents/homebrew.mxcl.$dbname.plist }
-        $dbname-restart() { echo 'Restarting $dbname...'; $dbname-stop; $dbname-start }"
+        $dbname-restart() { echo 'Restarting $dbname...'; $dbname-stop 2>/dev/null; $dbname-start }"
 done
 unset dbname
 
 alias prevent-sleep='pmset noidle'
-alias watch='opensnoop'
+alias eye='sudo opensnoop'
 
 alias gzip='gzip -9n' # Set strongest compression level as ‘default’ for gzip
 alias ping='ping -c 5' # Ping 5 times ‘by default’
