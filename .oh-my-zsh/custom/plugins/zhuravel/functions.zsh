@@ -41,7 +41,7 @@ function wiki() {
 
 # Expand shortened URL
 function longurl() {
-  curl -sI $1 | sed -n 's/Location: *//p';
+  curl -sIL $1 2>&1 | awk '/^Location/ {print $2}' | tail -n1
 }
 
 # Create a git.io short URL
@@ -107,7 +107,7 @@ function onport() {
 }
 
 # Helps me figure out what I can delete to free some space on SSD
-function find_large_files() {
+function find-large-files() {
   if [ ! -z $1 ]; then
     sudo find $1 -type f -size +${2:-100M} -exec du -h {} \; 2> /dev/null
   else
