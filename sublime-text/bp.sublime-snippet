@@ -1,4 +1,4 @@
-<!-- ~/Library/Application Support/Sublime Text 2/Packages/User/bp.sublime-snippet -->
+<!-- ~/Library/Application Support/Sublime Text 3/Packages/User/bp.sublime-snippet -->
 
 <snippet>
   <content><![CDATA[binding.remote_pry]]></content>

@@ -1,8 +1,8 @@
-// ~/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
+// ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
 
 {
   "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
-  "theme": "Soda Light.sublime-theme",
+  "theme": "Soda Light 3.sublime-theme",
   "font_face": "Menlo",
   "font_options": ["no_round"],
   "font_size": 13,

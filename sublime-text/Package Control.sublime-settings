@@ -1,0 +1,22 @@
+// ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings
+
+{
+  "installed_packages":
+  [
+    "All Autocomplete",
+    "BeautifyRuby",
+    "ChangeQuotes",
+    "CoffeeScript",
+    "CTags",
+    "Cucumber",
+    "Elixir",
+    "Gherkin (Cucumber) Formatter",
+    "GitGutter",
+    "Package Control",
+    "RailsCasts Colour Scheme",
+    "Ruby 1.9 Hash Converter",
+    "SideBarEnhancements",
+    "Theme - Soda",
+    "Toggle Symbol to String"
+  ]
+}
