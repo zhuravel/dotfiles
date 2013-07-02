@@ -111,7 +111,7 @@ function find-large-files() {
   if [ ! -z $1 ]; then
     sudo find $1 -type f -size +${2:-100M} -exec du -h {} \; 2> /dev/null
   else
-    echo 'Usage: find_large_files /path 100M'
+    echo 'Usage: find-large-files /path 100M'
     return 1
   fi
 }

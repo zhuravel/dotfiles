@@ -11,8 +11,6 @@ alias oo='open .'
 
 # A very simple and useful stopwatch (return or ctrl-d to stop)
 alias stopwatch='time ( read )'
-# Put a console clock in top right corner
-alias clock='while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &'
 # Simple calculator ( calc 2*2 => 4 )
 alias calc='bc <<<'
 # Easily search running processes

@@ -6,6 +6,7 @@
   "font_face": "Menlo",
   "font_options": ["no_round"],
   "font_size": 13,
+  "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
   "draw_white_space": "all",
   "highlight_line": true,
   "highlight_modified_tabs": true,
