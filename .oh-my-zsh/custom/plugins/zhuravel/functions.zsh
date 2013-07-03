@@ -29,7 +29,7 @@ function humantime() {
 }
 
 # Calculator for floating point and powers
-# ? '((2+1)/7)^3.5' => 0.0515325
+# math '((2+1)/7)^3.5' => 0.0515325
 function math() {
   awk "BEGIN{ print $* }"
 }

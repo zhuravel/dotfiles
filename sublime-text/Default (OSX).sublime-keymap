@@ -1,16 +1,14 @@
-// ~/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap
-
 [
   // Insert 'binding.pry' with cmd+b, 'binding.remote_pry' with cmd+shift+b
   {
     "keys": ["super+b"],
     "command": "insert_snippet",
-    "args": {"name": "Packages/User/pry.sublime-snippet"}
+    "args": {"name": "Packages/User/snippets/pry.sublime-snippet"}
   },
   {
     "keys": ["super+shift+b"],
     "command": "insert_snippet",
-    "args": {"name": "Packages/User/pry_remote.sublime-snippet"}
+    "args": {"name": "Packages/User/snippets/pry_remote.sublime-snippet"}
   },
 
   // Convert single to double or double to single quotes
