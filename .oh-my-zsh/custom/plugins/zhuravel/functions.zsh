@@ -30,13 +30,13 @@ function humantime() {
 
 # Calculator for floating point and powers
 # ? '((2+1)/7)^3.5' => 0.0515325
-function ? {
-  awk "BEGIN{ print $* }";
+function math() {
+  awk "BEGIN{ print $* }"
 }
 
 # Query Wikipedia via console over DNS
 function wiki() {
-  dig +short txt "$*".wp.dg.cx;
+  dig +short txt "$*".wp.dg.cx
 }
 
 # Expand shortened URL
