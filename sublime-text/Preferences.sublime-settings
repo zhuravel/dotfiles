@@ -1,50 +1,49 @@
 // ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
 
 {
+  // Colors
   "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
   "theme": "Soda Light 3.sublime-theme",
+
+  // Font
   "font_face": "Menlo",
-  "font_options": ["no_round"],
   "font_size": 13,
-  "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
+  "font_options": ["no_round"],
+
+  // Cursor style - no blinking and slightly wider than default
+  "caret_style": "solid",
+  "wide_caret": true,
+
+  // Editor view look-and-feel
   "draw_white_space": "all",
   "highlight_line": true,
+
+  // Editor behavior
   "highlight_modified_tabs": true,
-  "ensure_newline_at_eof_on_save": true,
-  "trim_trailing_white_space_on_save": true,
-  "translate_tabs_to_spaces": true,
-  "tab_size": 2,
+  "scroll_past_end": false,
+  "auto_complete_commit_on_tab": true,
+  "ignored_packages": ["Vintage"],
+  "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
+
+  // Word wrapping
   "rulers": [80, 120],
   "word_wrap": false,
-  "ignored_packages": [],
-  "folder_exclude_patterns": [
-    ".svn",
-    ".git",
-    ".hg",
-    "CVS",
-    ".sass-cache"
-  ],
+
+  // Whitespace - no tabs, trimming, end files with \n
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+
+  // Sidebar - exclude distracting files and folders
   "file_exclude_patterns": [
-    "*.pyc",
-    "*.pyo",
-    "*.exe",
-    "*.dll",
-    "*.obj",
-    "*.o",
-    "*.a",
-    "*.lib",
-    "*.so",
-    "*.dylib",
-    "*.ncb",
-    "*.sdf",
-    "*.suo",
-    "*.pdb",
-    "*.idb",
-    "*.class",
-    "*.psd",
-    "*.db",
-    "*.beam",
-    ".DS_Store",
+    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj",
+    "*.o", "*.a", "*.lib", "*.so", "*.dylib",
+    "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
+    "*.class", "*.psd", "*.db", "*.beam", ".DS_Store",
     ".tags"
+  ],
+  "folder_exclude_patterns": [
+    ".svn", ".git", ".hg", "CVS", ".sass-cache"
   ]
 }
