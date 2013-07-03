@@ -1,17 +1,76 @@
 // ~/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap
 
 [
+  // Insert 'binding.pry' with cmd+b, 'binding.remote_pry' with cmd+shift+b
   {
-    "keys": ["command+b"],
+    "keys": ["super+b"],
     "command": "insert_snippet",
-    "args": {"name": "Packages/User/bp.sublime-snippet"}
+    "args": {"name": "Packages/User/pry.sublime-snippet"}
   },
   {
-    "keys": ["command+shift+'"],
+    "keys": ["super+shift+b"],
+    "command": "insert_snippet",
+    "args": {"name": "Packages/User/pry_remote.sublime-snippet"}
+  },
+
+  // Convert single to double or double to single quotes
+  {
+    "keys": ["super+shift+'"],
     "command": "change_quotes"
   },
+
+  // Toggle string to symbol
   {
-    "keys": ["command+shift+;"],
+    "keys": ["super+shift+;"],
     "command": "toggle_symbol"
+  },
+
+  // Go to line
+  {
+    "keys": ["super+l"],
+    "command": "show_overlay",
+    "args": {"overlay": "goto", "text": ":"}
+  },
+
+  // Copy file name
+  {
+    "keys": ["super+shift+c"],
+    "command": "copy_path_to_clipboard"
+  },
+
+  // CTags
+  {
+    "keys": ["super+shift+."],
+    "command": "navigate_to_definition"
+  },
+  {
+    "keys": ["super+alt+p"],
+    "command": "rebuild_tags"
+  },
+
+  // Close all other tabs
+  {
+    "keys": ["super+alt+w"],
+    "command": "close_other_tabs"
+  },
+
+  // Focus on side bar
+  {
+    "keys": ["ctrl+shift+tab"],
+    "command": "focus_side_bar"
+  },
+
+  // Focus back in buffer
+  {
+    "keys": ["ctrl+tab"],
+    "command": "focus_group",
+    "args": {"group": 0}
+  },
+
+  // Delete a line with cmd+delete
+  {
+    "keys": ["super+backspace"],
+    "command": "run_macro_file",
+    "args": {"file": "Packages/Default/Delete Line.sublime-macro"}
   }
 ]

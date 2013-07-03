@@ -1,0 +1,5 @@
+<!-- ~/Library/Application Support/Sublime Text 3/Packages/User/pry.sublime-snippet -->
+
+<snippet>
+  <content><![CDATA[binding.pry]]></content>
+</snippet>
