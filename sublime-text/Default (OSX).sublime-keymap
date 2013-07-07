@@ -1,14 +1,20 @@
 [
-  // Insert 'binding.pry' with cmd+b, 'binding.remote_pry' with cmd+shift+b
+  // Insert 'binding.pry' with cmd+b+b, 'binding.remote_pry' with cmd+b+r
   {
-    "keys": ["super+b"],
+    "keys": ["super+b", "super+b"],
     "command": "insert_snippet",
     "args": {"name": "Packages/User/snippets/pry.sublime-snippet"}
   },
   {
-    "keys": ["super+shift+b"],
+    "keys": ["super+b", "super+r"],
     "command": "insert_snippet",
     "args": {"name": "Packages/User/snippets/pry_remote.sublime-snippet"}
+  },
+
+  // Convert Ruby 1.8 hashes to Ruby 1.9 syntax
+  {
+    "keys": ["super+shift+h"],
+    "command": "hash_syntax"
   },
 
   // Convert single to double or double to single quotes
@@ -30,20 +36,16 @@
     "args": {"overlay": "goto", "text": ":"}
   },
 
+  // Go to symbol
+  {
+    "keys": ["super+shift+."],
+    "command": "goto_definition"
+  },
+
   // Copy file name
   {
     "keys": ["super+shift+c"],
     "command": "copy_path_to_clipboard"
-  },
-
-  // CTags
-  {
-    "keys": ["super+shift+."],
-    "command": "navigate_to_definition"
-  },
-  {
-    "keys": ["super+alt+p"],
-    "command": "rebuild_tags"
   },
 
   // Close all other tabs
