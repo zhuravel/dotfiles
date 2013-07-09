@@ -17,6 +17,16 @@
     "command": "hash_syntax"
   },
 
+  // Converts Ruby blocks in brace to "do end" and vice versa
+  {
+    "keys": ["super+shift+["],
+    "command": "do_end_to_brace"
+  },
+  {
+    "keys": ["super+shift+]"],
+    "command": "brace_to_do_end"
+  },
+
   // Convert single to double or double to single quotes
   {
     "keys": ["super+shift+'"],
