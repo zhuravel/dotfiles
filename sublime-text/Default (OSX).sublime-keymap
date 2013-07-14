@@ -17,7 +17,7 @@
     "command": "hash_syntax"
   },
 
-  // Converts Ruby blocks in brace to "do end" and vice versa
+  // Convert Ruby blocks in brace to "do end" and vice versa
   {
     "keys": ["super+shift+["],
     "command": "do_end_to_brace"

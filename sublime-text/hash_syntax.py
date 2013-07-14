@@ -7,13 +7,11 @@ def new_style_hash(matchobj):
 
 class HashSyntax(sublime_plugin.TextCommand):
   def run(self, edit):
-    if sum(len(region) for region in self.view.sel()) == 0:
-      region = sublime.Region(0, self.view.size())
+    regions = [region for region in self.view.sel() if not region.empty()]
+    if not len(regions):
+      regions = [sublime.Region(0, self.view.size())]
+    for region in regions:
       self.replace_hashes(edit, region)
-
-    for region in self.view.sel():
-      if not region.empty():
-        self.replace_hashes(edit, region)
 
   def replace_hashes(self, edit, region):
     s = self.view.substr(region)
