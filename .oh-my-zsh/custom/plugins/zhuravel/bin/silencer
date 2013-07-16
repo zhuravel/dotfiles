@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+
+require 'open3'
+require 'rbconfig'
+require 'pty'
+
+def platform
+  @platform ||= begin
+    case RbConfig::CONFIG['host_os']
+    when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+      :windows
+    when /darwin|mac os|linux|solaris|bsd/
+      :unix
+    else
+      raise "Unknown platform: #{host_os.inspect}"
+    end
+  end
+end
+
+class Silencer
+  attr_reader :templates, :command
+
+  def initialize(command)
+    print_help if command.empty?
+    @command = command
+    if File.exist? filepath
+      @templates = File.read(filepath).split(/\r?\n/).map(&:strip)
+    end
+  end
+
+  def filepath
+    @filepath ||= "#{Dir.getwd}/.silencer"
+  end
+
+  def print_help
+    puts 'Usage: silencer [COMMAND]'
+    puts 'Make sure file ".silencer" exist in `pwd`.'
+    exit
+  end
+
+  def loud?(line)
+    templates.any? { |template| line[template] }
+  end
+
+  # Open3 can't capture the output in realtime.
+  # The whole output stream is buffered and is only available when the command has finished running.
+  def buffered
+    Open3.popen2e(command) do |stdin, stdout_and_stderr, wait_thr|
+      stdout_and_stderr.each { |line| print line unless loud?(line) }
+    end
+  end
+
+  def realtime
+    PTY.spawn(command) do |r, w, pid|
+      r.each { |line| print line unless loud?(line) } rescue Errno::EIO
+    end
+  rescue PTY::ChildExited
+    nil
+  end
+
+  def run
+    if templates
+      platform.eql?(:unix) ? realtime : buffered
+    else
+      puts %{File "#{filepath}" does not exist.}
+      exit 1
+    end
+  end
+end
+
+Silencer.new($*.join ' ').run
