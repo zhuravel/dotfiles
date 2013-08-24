@@ -28,6 +28,15 @@ function humantime() {
   perl -le 'print scalar gmtime shift' $1
 }
 
+function timestamped() {
+  if [ ! -z $1 ]; then
+    local format="%Y%m%d%H%M%S_$1.rb"
+  else
+    local format="%Y%m%d%H%M%S"
+  fi
+  ruby -e "puts Time.now.strftime('$format')"
+}
+
 # Calculator for floating point and powers
 # math '((2+1)/7)^3.5' => 0.0515325
 function math() {
