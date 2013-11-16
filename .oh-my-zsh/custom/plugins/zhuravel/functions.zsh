@@ -153,3 +153,13 @@ function overheat() {
   sleep 1; \
   say 'Overheated system.'
 }
+
+function pull_db_backup() {
+  cd ~/Downloads
+  LAST_DB_BACKUP=$(ssh worker1.curebit.com "ls /media/db-backup/" | tail -1)
+  SCP_FROM="worker1.curebit.com:/media/db-backup/$LAST_DB_BACKUP/production_dump.sql.gz"
+  SCP_TO="$PWD/production_dump.sql.gz"
+  echo "Source: $SCP_FROM"
+  echo "Downloading to: $SCP_TO"
+  scp $SCP_FROM $SCP_TO
+}
