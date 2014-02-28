@@ -10,6 +10,11 @@
     "command": "insert_snippet",
     "args": {"name": "Packages/User/snippets/pry_remote.sublime-snippet"}
   },
+  {
+    "keys": ["super+b", "super+1"],
+    "command": "insert_snippet",
+    "args": {"name": "Packages/User/snippets/pry_remote_1.sublime-snippet"}
+  },
 
   // Convert Ruby 1.8 hashes to Ruby 1.9 syntax
   {
