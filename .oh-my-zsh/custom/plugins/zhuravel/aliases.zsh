@@ -1,6 +1,6 @@
 # Rake tasks
-alias ptt='rake parallel:test'
 alias pts='rake parallel:spec'
+alias fixpts='rake parallel:drop parallel:create parallel:prepare'
 alias combo='rake db:migrate parallel:migrate db:schema:dump'
 
 # Shortcuts
@@ -16,6 +16,11 @@ alias calc='bc <<<'
 # Easily search running processes
 alias 'ps?'='ps ax | grep '
 
+# See all processes, ordered by memory usage, with 2 secs refresh
+alias topmem='top -s 2 -o mem'
+# See all processes, ordered by CPU usage, with 2 secs refresh
+alias topcpu='top -s 2 -o cpu'
+
 # Databases
 alias mysql='mysql -u root'
 alias mysql-top='watch -n 1 mysqladmin --user=root processlist'
@@ -29,7 +34,11 @@ for dbname in mysql postgresql couchdb redis; do
 done
 unset dbname
 
-alias prevent-sleep='pmset noidle'
+# Butterfly | terminal in a web browser
+alias butterfly-up='butterfly.server.py'
+alias butterfly='open -a "/Applications/Google Chrome.app" "http://localhost:57575"'
+
+alias prevent-sleep='pmset noidle' # also `caffeinate`
 alias eye='sudo opensnoop'
 
 alias gzip='gzip -9n' # Set strongest compression level as ‘default’ for gzip
@@ -64,4 +73,5 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
+alias penis='sleep 600; for (( i=10;;i+=10 )); do osascript -e "set volume output volume $i"; say penis; sleep 10; done;'
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
