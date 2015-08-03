@@ -159,12 +159,20 @@ function overheat() {
   say 'Overheated system.'
 }
 
-function pull_db_backup() {
-  cd ~/Downloads
-  LAST_DB_BACKUP=$(ssh worker1.curebit.com "ls /media/db-backup/" | tail -1)
-  SCP_FROM="worker1.curebit.com:/media/db-backup/$LAST_DB_BACKUP/production_dump.sql.gz"
-  SCP_TO="$PWD/production_dump.sql.gz"
-  echo "Source: $SCP_FROM"
-  echo "Downloading to: $SCP_TO"
-  scp $SCP_FROM $SCP_TO
+function flushdns() {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+}
+
+function combo() {
+  echo "Migrating [development]..."
+  RAILS_ENV=development bundle exec rake db:migrate db:structure:dump
+
+  if [ "$?" -eq "0" ]; then
+    echo "Migrating [test]..."
+    RAILS_ENV=test bundle exec rake parallel:load_structure
+    echo "Done."
+  else
+    echo "Fail."
+  fi
 }

@@ -1,7 +1,5 @@
 # Rake tasks
-alias pts='rake parallel:spec'
-alias fixpts='rake parallel:drop parallel:create parallel:prepare'
-alias combo='rake db:migrate parallel:migrate db:schema:dump'
+alias pts='RAILS_ENV=test parallel_rspec spec'
 
 # Shortcuts
 alias m='mate .'
@@ -23,6 +21,7 @@ alias topcpu='top -s 2 -o cpu'
 
 # Databases
 alias mysql='mysql -u root'
+alias mycli='mycli -u root'
 alias mysql-top='watch -n 1 mysqladmin --user=root processlist'
 alias mysql-dir='cd /usr/local/var/mysql/'
 alias psql='psql -U bohdan postgres'
