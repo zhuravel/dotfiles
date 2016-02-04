@@ -54,7 +54,13 @@
   // Go to symbol
   {
     "keys": ["super+shift+."],
-    "command": "goto_definition"
+    "command": "navigate_to_definition"
+  },
+
+  // Go to symbol in project
+  {
+    "keys": ["super+shift+r"],
+    "command": "goto_symbol_in_project"
   },
 
   // Copy file name

@@ -33,10 +33,6 @@ for dbname in mysql postgresql couchdb redis; do
 done
 unset dbname
 
-# Butterfly | terminal in a web browser
-alias butterfly-up='butterfly.server.py'
-alias butterfly='open -a "/Applications/Google Chrome.app" "http://localhost:57575"'
-
 alias prevent-sleep='pmset noidle' # also `caffeinate`
 alias eye='sudo opensnoop'
 

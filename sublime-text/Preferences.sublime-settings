@@ -40,7 +40,7 @@
     "*.o", "*.a", "*.lib", "*.so", "*.dylib",
     "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
     "*.class", "*.psd", "*.db", "*.beam", ".DS_Store",
-    ".tags"
+    ".tags", ".gemtags"
   ],
   "folder_exclude_patterns": [
     ".svn", ".git", ".hg", "CVS", ".sass-cache"

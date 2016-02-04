@@ -43,7 +43,7 @@
 
 [user]
   name = Bohdan Zhuravel
-  email = zhuravel.b@gmail.com
+  email = bohdan@zhuravel.bz
 
 [branch]
   autosetuprebase = always
@@ -54,3 +54,9 @@
 [core]
   editor = subl -w
   excludesfile = /Users/bohdan/.gitignore_global
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[push]
+  default = simple

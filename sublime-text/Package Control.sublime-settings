@@ -1,14 +1,20 @@
 {
   "installed_packages": [
     "All Autocomplete",
+    "BlameHighlighter",
     "ChangeQuotes",
     "CoffeeScript",
+    "CTags",
     "Elixir",
+    "Git",
     "GitGutter",
+    "GitHubinator",
+    "LESS",
     "Package Control",
     "RailsCasts Colour Scheme",
     "Ruby Block Converter",
-    "sublime-github",
+    "Ruby Slim",
+    "SCSS",
     "Theme - Soda",
     "Toggle Symbol to String"
   ]
