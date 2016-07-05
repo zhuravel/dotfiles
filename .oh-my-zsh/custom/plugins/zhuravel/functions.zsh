@@ -70,18 +70,6 @@ function gitio() {
   fi
 }
 
-# Create an l.md short URL
-function lmd() {
-  if [ $# -eq 2 ]; then
-    curl http://l.md/api/post -F "url=${1}" -F "custom=${2}" | json
-  elif [ ! -z $1 ]; then
-    curl http://l.md/api/post -F "url=${1}" | json
-  else
-    echo 'Usage: lmd http://example.com/link [custom-name]'
-    return 1
-  fi
-}
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
   local port="${1:-8000}"
