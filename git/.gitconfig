@@ -44,6 +44,10 @@
 [user]
   name = Bohdan Zhuravel
   email = bohdan@zhuravel.bz
+  signingkey = EEA2DF9D
+
+[gpg]
+  program = /usr/local/bin/gpg_wrap
 
 [branch]
   autosetuprebase = always
@@ -54,9 +58,14 @@
 [core]
   editor = subl -w
   excludesfile = /Users/bohdan/.gitignore_global
+
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+
 [push]
   default = simple
+
+[commit]
+  gpgsign = true
