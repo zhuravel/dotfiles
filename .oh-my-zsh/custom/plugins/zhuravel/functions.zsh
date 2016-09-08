@@ -61,9 +61,9 @@ function longurl() {
 # Create a git.io short URL
 function gitio() {
   if [ $# -eq 2 ]; then
-    curl -i http://git.io/ -F "url=${1}" -F "code=${2}"
+    curl -i https://git.io/ -F "url=${1}" -F "code=${2}"
   elif [ ! -z $1 ]; then
-    curl -i http://git.io/ -F "url=${1}"
+    curl -i https://git.io/ -F "url=${1}"
   else
     echo 'Usage: gitio http://github.com/link [custom-name]'
     return 1
