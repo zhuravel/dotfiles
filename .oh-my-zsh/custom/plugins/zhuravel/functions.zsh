@@ -164,3 +164,17 @@ function combo() {
     echo "Fail."
   fi
 }
+
+function smv() {
+  array=(
+    code/community/Talkable
+    etc/modules/Talkable_SocialReferrals.xml
+    design/frontend/base/default/layout/talkable
+    design/frontend/base/default/template/talkable
+  )
+
+  for filepath in $array; do
+    eval "rm -rf ~/Projects/simple-magento-vagrant/httpdocs/app/$filepath"
+    eval "cp -R ~/Projects/talkable-magento/app/$filepath ~/Projects/simple-magento-vagrant/httpdocs/app/$filepath"
+  done
+}

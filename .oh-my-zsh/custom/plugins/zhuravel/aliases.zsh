@@ -1,5 +1,8 @@
 # Rake tasks
 alias pts='RAILS_ENV=test parallel_rspec spec'
+alias csd='cap staging deploy'
+alias cpd='cap production deploy'
+alias cpdm='cap production deploy:migrations'
 
 # Shortcuts
 alias m='mate .'
