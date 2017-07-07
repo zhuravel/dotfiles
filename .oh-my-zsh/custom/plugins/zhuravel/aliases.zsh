@@ -38,6 +38,7 @@ unset dbname
 
 alias prevent-sleep='pmset noidle' # also `caffeinate`
 alias eye='sudo opensnoop'
+alias fixcamera='sudo killall VDCAssistant'
 
 alias gzip='gzip -9n' # Set strongest compression level as ‘default’ for gzip
 alias ping='ping -c 5' # Ping 5 times ‘by default’
