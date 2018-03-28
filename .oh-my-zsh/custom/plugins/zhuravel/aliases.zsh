@@ -4,11 +4,17 @@ alias csd='cap staging deploy'
 alias cpd='cap production deploy'
 alias cpdm='cap production deploy:migrations'
 
+# Talkable related
+alias annotate='bundle exec annotate --exclude serializers'
+alias talkable-ngrok='~/ngrok http 3000 -bind-tls=false -region=eu -subdomain=talkable'
+
 # Shortcuts
 alias m='mate .'
 alias s='subl .'
 alias o='open'
 alias oo='open .'
+alias exa='exa -lhbgH --git'
+alias rig='command rg' # ripgrep
 
 # A very simple and useful stopwatch (return or ctrl-d to stop)
 alias stopwatch='time ( read )'
@@ -57,11 +63,14 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
 
 # Get OS X Software Updates, and update oh-my-zsh, installed Ruby gems, Homebrew, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update; upgrade_oh_my_zsh'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update --system; sudo gem update; upgrade_oh_my_zsh'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'
+
+# Destroy all Docker images and containers
+alias docker-cleanup='docker rmi $(docker images -q); docker rmi $(docker images -q)'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'

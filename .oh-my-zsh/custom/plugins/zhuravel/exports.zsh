@@ -8,4 +8,4 @@ export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 
 export DISABLE_SPRING=1
-export SCOUT_DEV_TRACE='true'
+# export SCOUT_DEV_TRACE='true'
