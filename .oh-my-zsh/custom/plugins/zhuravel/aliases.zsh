@@ -1,11 +1,10 @@
 # Rake tasks
 alias pts='RAILS_ENV=test parallel_rspec spec'
-alias csd='cap staging deploy'
+alias csd='cap bastion deploy'
 alias cpd='cap production deploy'
 alias cpdm='cap production deploy:migrations'
 
 # Talkable related
-alias annotate='bundle exec annotate --exclude serializers'
 alias talkable-ngrok='~/ngrok http 3000 -bind-tls=false -region=eu -subdomain=talkable'
 
 # Shortcuts
@@ -15,6 +14,7 @@ alias o='open'
 alias oo='open .'
 alias exa='exa -lhbgH --git'
 alias rig='command rg' # ripgrep
+alias password='pwgen -s 32 1'
 
 # A very simple and useful stopwatch (return or ctrl-d to stop)
 alias stopwatch='time ( read )'
@@ -29,8 +29,8 @@ alias topmem='top -s 2 -o mem'
 alias topcpu='top -s 2 -o cpu'
 
 # Databases
-alias mysql='mysql -u root'
-alias mycli='mycli -u root'
+alias mysql='mysql -uroot'
+alias mycli='mycli -uroot'
 alias mysql-top='watch -n 1 mysqladmin --user=root processlist'
 alias mysql-dir='cd /usr/local/var/mysql/'
 alias psql='psql -U bohdan postgres'

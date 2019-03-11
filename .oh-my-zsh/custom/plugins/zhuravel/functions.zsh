@@ -158,7 +158,7 @@ function combo() {
 
   if [ "$?" -eq "0" ]; then
     echo "Migrating [test]..."
-    RAILS_ENV=test bundle exec rake parallel:load_structure
+    RAILS_ENV=test rails db:drop db:create db:migrate
     echo "Done."
   else
     echo "Fail."
@@ -178,3 +178,6 @@ function smv() {
     eval "cp -R ~/Projects/talkable-magento/app/$filepath ~/Projects/simple-magento-vagrant/httpdocs/app/$filepath"
   done
 }
+
+# sha256sum command, often used in wget scripts, is missing on default OS X installations
+function sha256sum() { shasum -a 256 "$@" ; }
