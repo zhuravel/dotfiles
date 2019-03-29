@@ -1,0 +1,7 @@
+<!-- ~/Library/Application Support/Sublime Text 3/Packages/User/snippets/pry_once.sublime-snippet -->
+
+<snippet>
+  <content><![CDATA[
+require "pry"; \$pry_count ||= 0; \$pry_count += 1; binding.pry if \$pry_count == 1;
+]]></content>
+</snippet>

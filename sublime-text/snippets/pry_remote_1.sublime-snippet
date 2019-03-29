@@ -1,3 +1,0 @@
-<snippet>
-  <content><![CDATA[$pry_count ||= 0; $pry_count += 1; binding.remote_pry if $pry_count == 1;]]></content>
-</snippet>

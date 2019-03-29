@@ -44,10 +44,9 @@
 [user]
   name = Bohdan Zhuravel
   email = bohdan@zhuravel.bz
-  signingkey = EEA2DF9D
 
 [gpg]
-  program = /usr/local/bin/gpg_wrap
+  program = /usr/local/bin/gpg
 
 [branch]
   autosetuprebase = always

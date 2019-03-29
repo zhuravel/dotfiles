@@ -1,15 +1,26 @@
 {
-  "installed_packages": [
+  "auto_upgrade_last_run": null,
+  "bootstrapped": true,
+  "in_process_packages":
+  [
+  ],
+  "installed_packages":
+  [
     "All Autocomplete",
+    "ANSIescape",
+    "Better CoffeeScript",
     "BlameHighlighter",
     "ChangeQuotes",
-    "CoffeeScript",
-    "CTags",
+    "Color Highlighter",
+    "Dockerfile Syntax Highlighting",
+    "EditorConfig",
     "Elixir",
-    "Git",
+    "FileManager",
     "GitGutter",
     "GitHubinator",
+    "JSX",
     "LESS",
+    "Liquid",
     "Package Control",
     "RailsCasts Colour Scheme",
     "Ruby Block Converter",

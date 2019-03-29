@@ -1,19 +1,14 @@
 [
-  // Insert 'binding.pry' with cmd+b+b, 'binding.remote_pry' with cmd+b+r
+  // Insert 'binding.pry' with cmd+b+b
   {
     "keys": ["super+b", "super+b"],
     "command": "insert_snippet",
     "args": {"name": "Packages/User/snippets/pry.sublime-snippet"}
   },
   {
-    "keys": ["super+b", "super+r"],
-    "command": "insert_snippet",
-    "args": {"name": "Packages/User/snippets/pry_remote.sublime-snippet"}
-  },
-  {
     "keys": ["super+b", "super+1"],
     "command": "insert_snippet",
-    "args": {"name": "Packages/User/snippets/pry_remote_1.sublime-snippet"}
+    "args": {"name": "Packages/User/snippets/pry_once.sublime-snippet"}
   },
 
   // Convert Ruby 1.8 hashes to Ruby 1.9 syntax
@@ -57,12 +52,6 @@
     "command": "navigate_to_definition"
   },
 
-  // Go to symbol in project
-  {
-    "keys": ["super+shift+r"],
-    "command": "goto_symbol_in_project"
-  },
-
   // Copy file name
   {
     "keys": ["super+shift+c"],
@@ -75,22 +64,9 @@
     "command": "close_other_tabs"
   },
 
-  // Focus on side bar
-  {
-    "keys": ["ctrl+shift+tab"],
-    "command": "focus_side_bar"
-  },
-
-  // Focus back in buffer
-  {
-    "keys": ["ctrl+tab"],
-    "command": "focus_group",
-    "args": {"group": 0}
-  },
-
   // Delete a line with cmd+delete
   {
-    "keys": ["super+backspace"],
+    "keys": ["super+shift+k"],
     "command": "run_macro_file",
     "args": {"file": "Packages/Default/Delete Line.sublime-macro"}
   }

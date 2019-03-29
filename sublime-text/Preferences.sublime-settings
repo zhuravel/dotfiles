@@ -1,48 +1,76 @@
 {
-  // Colors
-  "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
-  "theme": "Soda Light 3.sublime-theme",
-
-  // Font
-  "font_face": "Menlo",
-  "font_size": 13,
-  "font_options": ["no_round"],
-
-  // Cursor style - no blinking and slightly wider than default
-  "caret_style": "solid",
-  "wide_caret": true,
-
-  // Editor view look-and-feel
-  "draw_white_space": "all",
-  "highlight_line": true,
-
-  // Editor behavior
-  "highlight_modified_tabs": true,
-  "scroll_past_end": false,
   "auto_complete_commit_on_tab": true,
-  "ignored_packages": ["Vintage"],
-  "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
-
-  // Word wrapping
-  "rulers": [80, 120],
-  "word_wrap": false,
-
-  // Whitespace - no tabs, trimming, end files with \n
+  "caret_style": "solid",
+  "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+  "draw_white_space": "all",
+  "enable_tab_scrolling": false,
+  "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns":
+  [
+    "*.a",
+    "*.beam",
+    "*.class",
+    "*.db",
+    "*.dll",
+    "*.dylib",
+    "*.exe",
+    "*.idb",
+    "*.lib",
+    "*.ncb",
+    "*.o",
+    "*.obj",
+    "*.pdb",
+    "*.psd",
+    "*.pyc",
+    "*.pyo",
+    "*.sdf",
+    "*.so",
+    "*.suo",
+    ".DS_Store",
+    ".gemtags",
+    ".powrc",
+    ".tags"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".bundle",
+    ".git",
+    ".hg",
+    ".idea",
+    ".sass-cache",
+    ".svn",
+    ".vscode",
+    "app/javascript/__tests__",
+    "coverage",
+    "CVS",
+    "log",
+    "node_modules",
+    "public/assets",
+    "vendor"
+  ],
+  "font_face": "Menlo",
+  "font_options":
+  [
+    "no_round"
+  ],
+  "font_size": 13,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "rulers":
+  [
+    80,
+    120
+  ],
+  "scroll_past_end": false,
   "tab_size": 2,
+  "theme": "Soda Dark 3.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
-  "ensure_newline_at_eof_on_save": true,
-  "enable_tab_scrolling": false,
-
-  // Sidebar - exclude distracting files and folders
-  "file_exclude_patterns": [
-    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj",
-    "*.o", "*.a", "*.lib", "*.so", "*.dylib",
-    "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
-    "*.class", "*.psd", "*.db", "*.beam", ".DS_Store",
-    ".tags", ".gemtags"
-  ],
-  "folder_exclude_patterns": [
-    ".svn", ".git", ".hg", "CVS", ".sass-cache"
-  ]
+  "wide_caret": true,
+  "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
+  "word_wrap": false
 }
