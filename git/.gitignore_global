@@ -55,9 +55,6 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 
-# Tools that make the development process easier #
-##################################################
+# Misc #
+########
 .tags
-.powrc
-.powder
-.gemtags

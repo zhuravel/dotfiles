@@ -134,11 +134,6 @@ function relaunch() {
   done
 }
 
-# Uninstall an app with AppZapper
-function zap() {
-  open -a AppZapper /Applications/$1.app
-}
-
 # This seemed to be the most effective way to get someone to stop using my laptop
 function overheat() {
   echo 'The system is overheating and needs to go to sleep now.' | \
