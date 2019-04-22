@@ -1,5 +1,6 @@
 # Deployment
-alias csd='cap bastion deploy'
+alias cvd='cap void deploy'
+alias cbd='cap bastion deploy'
 alias cpd='cap production deploy'
 alias cpdm='cap production deploy:migrations'
 

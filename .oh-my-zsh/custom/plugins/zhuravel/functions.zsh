@@ -1,3 +1,19 @@
+function checkout-branch() {
+  for branch in $*; do
+    git checkout "$branch"; \
+    git fetch origin "$branch"; \
+    git reset --hard "origin/$branch"; \
+    git clean -d --force;
+  done
+}
+
+function checkout-staging() {
+  cd ~/Projects/talkable;
+  local branch="$(git branch | grep \* | cut -d ' ' -f2)";
+  checkout-branch staging-bart staging-bastion staging-void;
+  git checkout "$branch";
+}
+
 # Open a man page in Preview
 function pman() {
   man -t $1 | open -f -a preview
