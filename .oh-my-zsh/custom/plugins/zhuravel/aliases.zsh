@@ -9,6 +9,9 @@ alias s='subl .'
 alias o='open'
 alias oo='open .'
 alias exa='exa -lhbgH --git'
+alias git='hub' # https://github.com/github/hub
+alias pull='hub pr checkout'
+alias pulls='hub pr list -^f "%pC%>(8)%i%Creset %t% l (%cr %au) [%as]%n"'
 alias rig='command rg' # ripgrep
 
 # A very simple and useful stopwatch (return or ctrl-d to stop)
