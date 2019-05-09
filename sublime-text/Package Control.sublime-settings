@@ -15,7 +15,6 @@
     "Dockerfile Syntax Highlighting",
     "EditorConfig",
     "Elixir",
-    "FileManager",
     "GitGutter",
     "GitHubinator",
     "JSX",
@@ -27,6 +26,7 @@
     "Ruby Block Converter",
     "Ruby Slim",
     "SCSS",
+    "SideBarEnhancements",
     "Theme - Soda",
     "Toggle Symbol to String"
   ]
