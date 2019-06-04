@@ -28,7 +28,7 @@ alias topmem='top -s 2 -o mem'
 alias topcpu='top -s 2 -o cpu'
 
 # Databases
-alias mycli='mycli -uroot'
+alias mycli='mycli -uroot -hlocalhost'
 alias mysql='mysql -uroot'
 alias mysql-dir='cd /usr/local/var/mysql/'
 alias processlist='watch -n 1 mysqladmin --user=root processlist'
