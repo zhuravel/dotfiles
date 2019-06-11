@@ -25,4 +25,4 @@ brew "yarn"
 # `brew cask list`
 cask "aerial"
 cask "chromedriver"
-cask "sequel-pro"
+cask "google-chrome"
