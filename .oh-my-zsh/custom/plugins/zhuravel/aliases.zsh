@@ -56,7 +56,7 @@ alias flush='dscacheutil -flushcache && killall -HUP mDNSResponder'
 alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
 
 # Get OS X Software Updates, and update oh-my-zsh, installed Ruby gems, Homebrew, and their installed packages
-alias update='sudo softwareupdate -ia; brew update; brew upgrade; brew cask upgrade; brew cleanup; gem update --system; cd ~/.oh-my-zsh; git pull --stat origin master; cd -'
+alias update='sudo softwareupdate -ia; brew update; brew upgrade; brew upgrade --cask; brew cleanup; gem update --system; cd ~/.oh-my-zsh; git pull --stat origin master; cd -'
 alias backup='mackup backup -f'
 
 # Empty the Trash on all mounted volumes and the main HDD
