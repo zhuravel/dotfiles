@@ -1,2 +1,1 @@
-install: --no-document
-update:  --no-document
+gem: --no-document

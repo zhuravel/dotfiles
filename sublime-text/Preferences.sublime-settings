@@ -1,7 +1,7 @@
 {
   "auto_complete_commit_on_tab": true,
   "caret_style": "solid",
-  "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+  "color_scheme": "Packages/Railscasts Extended/Railscasts Extended.tmTheme",
   "draw_white_space": "all",
   "enable_tab_scrolling": false,
   "ensure_newline_at_eof_on_save": true,
@@ -40,7 +40,7 @@
     ".sass-cache",
     ".svn",
     ".vscode",
-    "app/javascript/__tests__",
+    // "app/javascript/__tests__",
     "coverage",
     "CVS",
     "log",
@@ -53,12 +53,12 @@
   [
     "no_round"
   ],
-  "font_size": 13,
+  "font_size": 15,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages":
   [
-    "Vintage"
+    "Vintage",
   ],
   "rulers":
   [
@@ -72,5 +72,5 @@
   "trim_trailing_white_space_on_save": true,
   "wide_caret": true,
   "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~",
-  "word_wrap": false
+  "word_wrap": false,
 }

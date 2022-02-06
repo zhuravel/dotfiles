@@ -1,33 +1,24 @@
 {
-  "auto_upgrade_last_run": null,
   "bootstrapped": true,
   "in_process_packages":
   [
   ],
   "installed_packages":
   [
-    "All Autocomplete",
-    "ANSIescape",
-    "Better CoffeeScript",
-    "BlameHighlighter",
     "ChangeQuotes",
+    "CloseOtherWindows",
     "Color Highlighter",
     "Dockerfile Syntax Highlighting",
     "EditorConfig",
-    "Elixir",
     "GitGutter",
     "GitHubinator",
-    "JSX",
-    "LESS",
     "Liquid",
     "Package Control",
-    "ProjectManager",
-    "RailsCasts Colour Scheme",
+    "Railscasts Extended",
     "Ruby Block Converter",
-    "Ruby Slim",
     "SCSS",
     "SideBarEnhancements",
     "Theme - Soda",
-    "Toggle Symbol to String"
-  ]
+    "Toggle Symbol to String",
+  ],
 }
