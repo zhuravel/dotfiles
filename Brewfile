@@ -5,16 +5,14 @@ tap "homebrew/cask"
 brew "ansible"
 brew "aspell"
 brew "cmake"
+brew "gh"
 brew "git"
 brew "heroku"
 brew "htop"
-brew "hub"
 brew "imagemagick"
 brew "libidn"
-brew "mackup"
 brew "md5sha1sum"
 brew "midnight-commander"
-brew "mongodb@3.6", restart_service: true
 brew "mycli"
 brew "mysql", restart_service: true
 brew "node", link: true
@@ -30,8 +28,6 @@ brew "watch"
 brew "yarn"
 
 # `brew cask list`
-cask "aerial"
-cask "betterzip"
 cask "chromedriver"
 cask "google-chrome"
 cask "ngrok"
